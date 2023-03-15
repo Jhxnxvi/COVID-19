@@ -1,3 +1,26 @@
+Exercise: Covid-19 Daily Reports
+Objective: go through Extract, Transform, Load steps using Python, Pandas and SQLite.
+Step 1: Extract
+Use the John Hopkins University Github with the following values;
+OWNER = 'CSSEGISandData'
+REPO = 'COVID-19'
+PATH = 'csse_covid_19_data/csse_covid_19_daily_reports'
+URL = f'https://api.github.com/repos/{OWNER}/{REPO}/contents/{PATH}'
+Using Github's API, send a GET request to URL to receive a JSON file, containing an array of object descriptions for every file in the specified Github repository. The 'download_url' found here can be used to download data using Pandas.
+
+JSON response shown in Postman
+Loop through and collect all 'download_url's into a list. 
+Step 2: Transform
+Read URLs using 'pandas.read_csv()'.
+View the information consider ways to clean, filter and process the data. 
+Re-label  columns for consistency.
+Step 3: Load
+Load into SQL database using 'pandas.DataFrame.to_sql'.
+You must connect to a SQLite database using sqlite3.
+Once you have finished:
+Compare your work to the code written here. Try to establish the separate ETL steps. Consider steps you may have missed.
+ Covid19-ETL-API/etl.py at main · anth7310/Covid19-ETL-API (github.com)
+ 
 # COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University
 
 On March 10, 2023, the Johns Hopkins Coronavirus Resource Center ceased its collecting and reporting of global COVID-19 data. For updated cases, deaths, and vaccine data please visit the following sources:
